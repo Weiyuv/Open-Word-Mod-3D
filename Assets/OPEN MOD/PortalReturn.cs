@@ -3,19 +3,31 @@ using UnityEngine.SceneManagement;
 
 public class PortalReturn : MonoBehaviour
 {
-    private bool playerInRange = false; // Verifica se o jogador está dentro do alcance do portal
-    private Transform player; // Referência ao jogador
+    private bool playerInRange;
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     void Update()
     {
         if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
-            TeleportPlayerBack();
+            string lastScene = TeleportManager.Instance.GetLastScene();
+            if (!string.IsNullOrEmpty(lastScene))
+            {
+                SceneManager.LoadScene(lastScene);
+            }
+            else
+            {
+                Debug.LogWarning("Cena anterior não encontrada!");
+            }
         }
     }
 
@@ -35,36 +47,18 @@ public class PortalReturn : MonoBehaviour
         }
     }
 
-    // Teleporta o jogador de volta à última cena e posição registrada
-    void TeleportPlayerBack()
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Recupera os dados salvos no TeleportManager
-        (string lastScene, Vector3 lastPosition) = TeleportManager.Instance.GetTeleportData();
-
-        // Verifica se os dados estão corretos
-        if (!string.IsNullOrEmpty(lastScene))
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj != null)
         {
-            // Carrega a cena anterior
-            SceneManager.LoadScene(lastScene);
-
-            // Espera um quadro para garantir que a cena foi carregada
-            Invoke("TeleportToSavedPosition", 0.1f);
+            Vector3 lastPosition = TeleportManager.Instance.GetLastPosition();
+            playerObj.transform.position = lastPosition;
+            Debug.Log("Jogador teleportado de volta para: " + lastPosition);
         }
         else
         {
-            Debug.LogWarning("Cena anterior não encontrada!");
+            Debug.LogWarning("Jogador não encontrado na cena após o carregamento.");
         }
-    }
-
-    // Teleporta o jogador para a posição salva após a cena ser carregada
-    void TeleportToSavedPosition()
-    {
-        (string lastScene, Vector3 lastPosition) = TeleportManager.Instance.GetTeleportData();
-
-        // Move o jogador para a posição salva
-        player.position = lastPosition;
-
-        // Opcional: adicionar lógica para atualizar animações ou estados do jogador
-        Debug.Log("Jogador teleportado para a posição: " + lastPosition);
     }
 }

@@ -2,17 +2,17 @@ using UnityEngine;
 
 public class TeleportManager : MonoBehaviour
 {
-    public static TeleportManager Instance; // Instância única do manager
-    private string lastScene; // Última cena visitada
-    private Vector3 lastPlayerPosition; // Posição do jogador na última cena
+    public static TeleportManager Instance;
+
+    private string lastScene;
+    private Vector3 lastPosition;
 
     void Awake()
     {
-        // Verifica se já existe uma instância do TeleportManager
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // Mantém o TeleportManager entre as cenas
+            DontDestroyOnLoad(gameObject); // Persiste entre cenas
         }
         else
         {
@@ -20,16 +20,19 @@ public class TeleportManager : MonoBehaviour
         }
     }
 
-    // Salva os dados de teleportação (última cena e posição do jogador)
-    public void SaveTeleportData(string scene, Vector3 position)
+    public void SaveTeleportData(string sceneName, Vector3 position)
     {
-        lastScene = scene;
-        lastPlayerPosition = position;
+        lastScene = sceneName;
+        lastPosition = position;
     }
 
-    // Retorna os dados de teleportação salvos
-    public (string, Vector3) GetTeleportData()
+    public string GetLastScene()
     {
-        return (lastScene, lastPlayerPosition);
+        return lastScene;
+    }
+
+    public Vector3 GetLastPosition()
+    {
+        return lastPosition;
     }
 }
