@@ -276,6 +276,31 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd6dc9bf7490c6041ada3763e75e72b4, type: 3}
+--- !u!1 &112920345 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: fc2f6f49250ea374dbd1bd798ffedde8, type: 3}
+  m_PrefabInstance: {fileID: 2045197152}
+  m_PrefabAsset: {fileID: 0}
+--- !u!154 &112920349
+TerrainCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112920345}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_TerrainData: {fileID: 0}
+  m_EnableTreeColliders: 1
 --- !u!1 &115384028
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,7 +811,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -4216859302048453862, guid: fc2f6f49250ea374dbd1bd798ffedde8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 115384029}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: fc2f6f49250ea374dbd1bd798ffedde8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 908747790}
   m_SourcePrefab: {fileID: 100100000, guid: fc2f6f49250ea374dbd1bd798ffedde8, type: 3}
 --- !u!1001 &284811130
 PrefabInstance:
@@ -1055,7 +1083,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: fc2f6f49250ea374dbd1bd798ffedde8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1551282600}
   m_SourcePrefab: {fileID: 100100000, guid: fc2f6f49250ea374dbd1bd798ffedde8, type: 3}
 --- !u!4 &333600682 stripped
 Transform:
@@ -3125,11 +3156,36 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd6dc9bf7490c6041ada3763e75e72b4, type: 3}
+--- !u!1 &908747786 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: fc2f6f49250ea374dbd1bd798ffedde8, type: 3}
+  m_PrefabInstance: {fileID: 259003464}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &908747789 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: fc2f6f49250ea374dbd1bd798ffedde8, type: 3}
   m_PrefabInstance: {fileID: 259003464}
   m_PrefabAsset: {fileID: 0}
+--- !u!154 &908747790
+TerrainCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908747786}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_TerrainData: {fileID: 0}
+  m_EnableTreeColliders: 1
 --- !u!1001 &914972974
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5235,6 +5291,31 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd6dc9bf7490c6041ada3763e75e72b4, type: 3}
+--- !u!1 &1551282596 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: fc2f6f49250ea374dbd1bd798ffedde8, type: 3}
+  m_PrefabInstance: {fileID: 324797399}
+  m_PrefabAsset: {fileID: 0}
+--- !u!154 &1551282600
+TerrainCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551282596}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_TerrainData: {fileID: 0}
+  m_EnableTreeColliders: 1
 --- !u!1001 &1564728812
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7058,7 +7139,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: fc2f6f49250ea374dbd1bd798ffedde8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 112920349}
   m_SourcePrefab: {fileID: 100100000, guid: fc2f6f49250ea374dbd1bd798ffedde8, type: 3}
 --- !u!1001 &2058913411
 PrefabInstance:
