@@ -26,4 +26,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/X/Scenes/Shrine01.unity
     guid: 626ee094935379e43a55611ffc857828
+  - enabled: 1
+    path: Assets/OPEN MOD/Shrine02.unity
+    guid: 31e0e29f59ab4d64f95327bf1ef2c8bd
+  - enabled: 1
+    path: Assets/OPEN MOD/Shrine03.unity
+    guid: c8c3a96a20aacbb4ca3a31a40a41ce5b
+  - enabled: 1
+    path: Assets/OPEN MOD/Shrine04.unity
+    guid: cdd31051926ba11428859684cf953cb8
   m_configObjects: {}
